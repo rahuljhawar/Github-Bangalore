@@ -1,0 +1,18 @@
+.users {
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+.child {
+  flex: 1 0 45%; /* explanation below */
+  margin:5px;
+}
+
+@media(max-width:970px){
+  .users{
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+}

@@ -1,0 +1,51 @@
+<br>
+
+<div class="searchContainer input-group">
+    <h3>Search Github Bangalore Users</h3>
+    <input type="text" id="searchUser" ng-model="userCtrl.userName" class="form-control ml-3" placeholder="Github Username...">
+    <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" ng-click="userCtrl.searchTheUsers()">Search</button>
+    </div>
+</div>
+<br>
+<div class="users" ng-if="userCtrl.showSearchedResult">
+    <div class="card child" ng-repeat="user in userCtrl.searchedResults.slice(((userCtrl.currentPage-1)*userCtrl.itemsPerPage),((userCtrl.currentPage)*userCtrl.itemsPerPage))">
+        <div class="card-body d-flex align-items-center" style="padding: 0 !important">
+            <img ng-src="{{user.avatar_url}}" class="float-left" height="150" width="150">
+            <div class="content ml-3">
+                <h5 class="card-title">
+                    <strong>Username:</strong>
+                    {{user.login}}
+                </h5>
+                <h5 class="card-title">
+                    <strong>Profile:</strong>
+                    <a ng-href="{{user.html_url}}">{{user.html_url}}</a>
+                </h5>
+            </div>
+        </div>
+    </div>
+    <ul ng-if="userCtrl.searchedResults.length >10" uib-pagination total-items="userCtrl.searchedResults.length" max-size="5" ng-change="userCtrl.pageChanged()" ng-model="userCtrl.currentPage"
+        class="pagination-md mt-3" boundary-link-numbers="true" rotate="false">
+    </ul>
+</div>
+<h5 ng-if="userCtrl.userNotFound" >User not found</h5>
+<div class="users" ng-show="!userCtrl.showSearchedResult">
+    <div class="card child" ng-repeat="user in userCtrl.usersArray">
+        <div class="card-body d-flex align-items-center" style="padding: 0 !important">
+            <img ng-src="{{user.avatar_url}}" class="float-left" height="150" width="150">
+            <div class="content ml-3">
+                <h5 class="card-title">
+                    <strong>Username:</strong>
+                    {{user.login}}
+                </h5>
+                <h5 class="card-title">
+                    <strong>Profile:</strong>
+                    <a ng-href="{{user.html_url}}">{{user.html_url}}</a>
+                </h5>
+            </div>
+        </div>
+    </div>
+    <ul uib-pagination total-items="userCtrl.totalCount" max-size="5" ng-change="userCtrl.pageChanged()" ng-model="userCtrl.currentPage"
+        class="pagination-md mt-3" boundary-link-numbers="true" rotate="false">
+    </ul>
+</div>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="GithubBangalore">
+
+<head>
+  <base href="/">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Github Bangalore</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+    <div class="container">
+      <a class="navbar-brand" href="#">Github Bangalore</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <!-- Partial view will go here -->
+    <div ng-view ng-cloak>
+
+    </div>
+  </div>
+  <!-- /.container -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+  <script src="https://code.angularjs.org/1.7.2/angular-route.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="js/ui-bootstrap-tpls-3.0.3.min.js"></script>
+  <script src="angular/app.js"></script>
+  <script src="angular/routes.js"></script>
+  <!-- CONTROLLERS -->
+  <script src="angular/controllers/userController.js"></script>
+
+  <!-- SERVICES -->
+  <script src="angular/services/queryService.js"></script>
+</body>
+
+</html>
